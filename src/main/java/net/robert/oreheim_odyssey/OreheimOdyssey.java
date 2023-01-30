@@ -1,6 +1,7 @@
 package net.robert.oreheim_odyssey;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -11,6 +12,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.robert.oreheim_odyssey.block.ModBlocks;
+import net.robert.oreheim_odyssey.item.ModItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -24,6 +27,8 @@ public class OreheimOdyssey
 
         modEventBus.addListener(this::commonSetup);
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
@@ -34,8 +39,14 @@ public class OreheimOdyssey
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        //if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
-        //    event.accept(EXAMPLE_BLOCK_ITEM);
+        if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.RED_BERYL);
+            event.accept(ModItems.RAW_RED_BERYL);
+
+            event.accept(ModBlocks.RED_BERYL_BLOCK);
+            event.accept(ModBlocks.RED_BERYL_ORE);
+            event.accept(ModBlocks.DEEPSLATE_RED_BERYL_ORE);
+        }
     }
 
     @SubscribeEvent
