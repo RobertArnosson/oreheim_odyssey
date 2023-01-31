@@ -13,6 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.robert.oreheim_odyssey.block.ModBlocks;
+import net.robert.oreheim_odyssey.item.ModCreativeModeTab;
 import net.robert.oreheim_odyssey.item.ModItems;
 import org.slf4j.Logger;
 
@@ -39,13 +40,14 @@ public class OreheimOdyssey
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
+        if (event.getTab() == ModCreativeModeTab.OREHEIM_ODYSSEY) {
             event.accept(ModItems.RED_BERYL);
             event.accept(ModItems.RAW_RED_BERYL);
 
             event.accept(ModBlocks.RED_BERYL_BLOCK);
             event.accept(ModBlocks.RED_BERYL_ORE);
             event.accept(ModBlocks.DEEPSLATE_RED_BERYL_ORE);
+            event.accept(ModBlocks.GEM_CLEANER);
         }
     }
 

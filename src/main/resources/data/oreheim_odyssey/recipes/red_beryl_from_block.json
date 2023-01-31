@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "oreheim_odyssey:red_beryl"
+    }
+  ],
+  "result": {
+    "item": "oreheim_odyssey:red_beryl_block",
+    "count": 9
+  }
+}

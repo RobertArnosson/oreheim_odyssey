@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "oreheim_odyssey:red_beryl"
+    }
+  },
+  "result": {
+    "item": "oreheim_odyssey:red_beryl_block"
+  }
+}

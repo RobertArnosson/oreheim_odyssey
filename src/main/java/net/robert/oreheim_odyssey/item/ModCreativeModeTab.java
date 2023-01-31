@@ -11,11 +11,11 @@ import net.robert.oreheim_odyssey.OreheimOdyssey;
 
 @Mod.EventBusSubscriber(modid = OreheimOdyssey.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModCreativeModeTab {
-    public static CreativeModeTab QUESTMASTER_TAB;
+    public static CreativeModeTab OREHEIM_ODYSSEY;
 
     @SubscribeEvent
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event) {
-        QUESTMASTER_TAB = event.registerCreativeModeTab(new ResourceLocation(OreheimOdyssey.MOD_ID, "oreheim_odyssey"),
+        OREHEIM_ODYSSEY = event.registerCreativeModeTab(new ResourceLocation(OreheimOdyssey.MOD_ID, "oreheim_odyssey"),
                 builder -> builder.icon(() -> new ItemStack(ModItems.RED_BERYL.get())).title(Component.literal("Oreheim Odyssey Tab")).build());
     }
 }

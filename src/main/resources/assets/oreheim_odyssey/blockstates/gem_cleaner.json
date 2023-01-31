@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "oreheim_odyssey:block/gem_cleaner"
+    },
+    "facing=north": {
+      "model": "oreheim_odyssey:block/gem_cleaner",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "oreheim_odyssey:block/gem_cleaner",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "oreheim_odyssey:block/gem_cleaner",
+      "y": 90
+    }
+  }
+}
