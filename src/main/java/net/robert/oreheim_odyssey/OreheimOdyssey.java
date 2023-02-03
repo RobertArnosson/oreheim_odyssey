@@ -1,7 +1,7 @@
 package net.robert.oreheim_odyssey;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -13,8 +13,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.robert.oreheim_odyssey.block.ModBlocks;
+import net.robert.oreheim_odyssey.block.entity.ModBlockEntities;
 import net.robert.oreheim_odyssey.item.ModCreativeModeTab;
 import net.robert.oreheim_odyssey.item.ModItems;
+import net.robert.oreheim_odyssey.screen.GemCleanerScreen;
+import net.robert.oreheim_odyssey.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -30,6 +33,8 @@ public class OreheimOdyssey
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
@@ -48,6 +53,7 @@ public class OreheimOdyssey
             event.accept(ModBlocks.RED_BERYL_ORE);
             event.accept(ModBlocks.DEEPSLATE_RED_BERYL_ORE);
             event.accept(ModBlocks.GEM_CLEANER);
+            event.accept(ModBlocks.TRASH);
         }
     }
 
@@ -60,7 +66,7 @@ public class OreheimOdyssey
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(ModMenuTypes.GEM_CLEANER_MENU.get(), GemCleanerScreen::new);
         }
     }
 }

@@ -35,6 +35,9 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.OREHEIM_ODYSSEY);
+    public static final RegistryObject<Block> TRASH = registerBlock("trash",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.DIRT)
+                    .strength(0.75f)), ModCreativeModeTab.OREHEIM_ODYSSEY);
 
     public static final RegistryObject<Block> GEM_CLEANER = registerBlock("gem_cleaner",
             () -> new GemCleanerBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL)

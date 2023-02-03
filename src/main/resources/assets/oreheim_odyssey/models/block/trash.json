@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "oreheim_odyssey:block/trash_rest",
+    "east": "oreheim_odyssey:block/trash_side",
+    "north": "oreheim_odyssey:block/trash_side",
+    "particle": "oreheim_odyssey:block/trash_side",
+    "south": "oreheim_odyssey:block/trash_side",
+    "up": "oreheim_odyssey:block/trash_rest",
+    "west": "oreheim_odyssey:block/trash_side"
+  }
+}

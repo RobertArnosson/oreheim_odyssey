@@ -7,7 +7,8 @@
 		"4": "oreheim_odyssey:block/inside_side",
 		"5": "oreheim_odyssey:block/inside_top",
 		"6": "oreheim_odyssey:block/front_back",
-		"7": "oreheim_odyssey:block/gear"
+		"7": "oreheim_odyssey:block/gear",
+		"particle": "oreheim_odyssey:block/top"
 	},
 	"elements": [
 		{
